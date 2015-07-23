@@ -37,7 +37,7 @@ urlpatterns = patterns('',('^$', views.test_form),
 
 
     # Example:
-    # (r'^testproject/', include('testproject.foo.urls')),
+    # (r'^civiguard/', include('civiguard.foo.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
