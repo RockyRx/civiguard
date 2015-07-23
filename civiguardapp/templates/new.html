@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Location Setup</title>
+        <link href="/css/mapstyle.css" rel="stylesheet" type="text/css" /><!--[if lte IE 7]>
+        <style>
+        .content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+        ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+        </style>
+        <![endif]-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=en"></script>
+        <script type="text/javascript" src="/scripts/map.js"></script>
+		<script type="text/javascript" src="/scripts/tooltip.js"></script>
+        <script type="text/javascript" src="/scripts/jquery.pack.js"></script>
+        <script type="text/javascript" src="/scripts/jquery.json2.js"></script>
+        <script type="text/javascript" src="/scripts/jquery.glow.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+              
+            });
+        </script>
+    </head>
+
+    <body onLoad="initialize()">
+
+        <div class="container">
+            <div class="header"><a href="#"><img src="/images/logo.png" alt="civi guard logo" name="Insert_logo" width="350" height="80" id="Insert_logo" style="display:block;" /></a>
+                <!-- end .header -->
+            </div>
+            <div id="pretext">
+                <p>
+                    	Thank you for verifying your email address and cell phone number. Now you can setup upto two locales and upto ten personal points-of-interest.</p>
+            </div>
+            <div class="container1">
+                <div class="sidebar1">
+                    <div id="info" style="display:none;"></div>
+                    <div id="localebox">
+                        <h3 id="localeTip">Add Locales<img src="/images/info_icon.png" alt="info"  onmouseover="tooltip.show('<strong>Select a locale, it can be your place of work, home or play.</strong>');" onmouseout="tooltip.hide();"/></h3>
+                        <p class="infotext">
+                            Please note that atleast one locale is required. You can add upto 2 locales.
+                        </p>
+				<input type="button" value="" style="background:url('/images/add-location.png') no-repeat scroll left top transparent; border:0 none; cursor:pointer;width: 134px;height:50px;" onclick="addLocaleAction()"/>
+                    </div>
+
+                    <div id="poibox">
+                        <h3 class="poiTip">Add points of interest<img src="/images/info_icon.png" alt="info"  onmouseover="tooltip.show('<strong>These are your personal points of interest or locations that you have planned to use during emergencies. They will be made available to you on your mobile device during emergencies.</strong>');" onmouseout="tooltip.hide();"/></h3>
+                        <p class="infotext">
+                            You can add upto 10 locations.
+                        </p>
+				<input type="button" value="" style="background:url('/images/add-location.png') no-repeat scroll left top transparent; border:0 none; cursor:pointer;width: 134px;height:50px;" onclick="addPoiAction()"/>
+                    </div>
+
+                    <div style="padding-top: 20px;">
+				<input type="button" value="" style="background:url('/images/save-btn.png') no-repeat scroll left top transparent; border:0 none; cursor:pointer;width: 206px;height:60px;" onclick="saveAndContinue()"/>
+                    </div>
+			<br></br><br></br><br></br><br></br><br></br><br></br>
+			<br></br><br></br>
+                    
+                    <!-- end .sidebar1 -->
+                </div>
+		  <div id="userid" style="display:none;">{{ u_id }}</div>
+                <div class="content">
+                    <div id="message">Please click "Add Location" to add locations on the map.</div>
+
+                    <div class="content" id="map_canvas" style="width:75%; height:70%; position:absolute"></div>
+
+                    <!-- end .content -->
+                </div>
+
+                <div class="footer">
+                    <p></p>
+                    <div id="test"></div>
+                    <!-- end .footer -->
+                </div>
+            </div>
+            <!-- end .container -->
+        </div>
+    </body>
+</html>

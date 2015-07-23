@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+             padding: 0;
+             margin: 0;
+}
+p {
+    margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+    padding-right: 15px;
+    padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+
+
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+
+.container1{
+    padding:0 5px 0 5px;
+    height:100%;
+}
+
+.sidebar1 {
+    float: left;
+    width: 25%;
+    background: #FFF;
+    padding-bottom: 10px;
+    padding-top: 25px;
+    height: 100%;
+}
+.content {
+    padding: 10px 0;
+    width: 75%;
+    float: left;
+}
+
+
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+                                                  background: #6F7D94;
+                                                  color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+    padding: 10px 0;
+
+
+    clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+          float: right;
+          margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+          float: left;
+          margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+              clear:both;
+              height:0;
+              font-size: 1px;
+              line-height: 0px;
+}
+
+#message{
+    height:20px;
+    text-align:center;
+    padding:0 0 10px 0;
+}
+
+#localebox{
+    display:inline;
+}
+
+.hidden{
+    display:none;
+}
+
+.error{
+
+}
+
+.info{
+
+}
+
+#pretext{
+    padding:20px 0  5px 0;
+}
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+    display:none;
+    background:transparent url(/images/white_arrow_big.png);
+    font-size:15px;
+    height:216px;
+    width:370px;
+    padding:25px;
+    color:#000000;
+}
+
+button {
+    border: 0 none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 15px 0 0;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    width: auto;
+}
+
+button.rounded {
+    background: transparent url( /images/btn_right.png ) no-repeat scroll right top;
+    clear: left;
+    font-size: 0.8em;
+}
+
+button span {
+    display: block;
+    padding: 0 0 0 15px;
+    position: relative;
+    white-space: nowrap;
+    height: 30px;
+    line-height: 30px;
+}
+
+button.rounded span {
+    background: transparent url( /images/btn_left.png ) no-repeat scroll left top;
+    color: #FFFFFF;
+}
+
+button.rounded:hover {
+    background-position: 100% -30px;
+}
+
+button.rounded:hover span {
+    background-position: 0% -30px;
+}
+
+button:-moz-focus-inner {
+    border: none;
+}

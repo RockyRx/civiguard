@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>CiviGuard, Inc.</title>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection, print"/>
+        <script src="/scripts/twitter.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/scripts/twitter.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            getTwitters('civiTweets', {
+                id: 'civiguard',
+                clearContents: true, // leave the original message in place
+                count: 3,
+                withFriends: true,
+                ignoreReplies: true,
+                newwindow: true
+            });
+        </script>
+    </head>
+    <body>
+        <div id="Container">
+            <div id="Content">
+                <div id="Nav"><a href="http://www.civiguard.com">CiviGuard.com&nbsp;&raquo;</a></div>
+                <div id="Header"> <a href="http://www.civiguard.me/"><img src="/images/logo.png" alt="CiviGuard Logo" /></a>
+                </div>
+                <div id="Wrap">
+                    <h1 class="center">Verification</h1>
+                    <div id="ColLeft2">
+
+
+                        <h2>My  code is</h2>
+                        <form class="CodeForm" action="/complete/" method="POST">
+                            <div>
+				<input name="userCode" type="text" />
+				<input name="userEmail" type="hidden" value="{{ userEmail }}"/>
+				<input name="reval" type="hidden" value="{{ reval }}"/>
+				<input type="image" src="/images/continue-btn.png" alt="Submit button"/>
+				<div style="color: red"> {{ error_code }} </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <div id="ColRight2">
+                        <h2>I didn't receive a code</h2>
+                        <form class="CodeForm" action="/verification/" method="POST">
+                            <div>
+                                <input name="userEmail" type="hidden" value="{{ userEmail }}"/>
+				    <input name="val" type="hidden" value="resend"/>
+                                <input name="reval" type="hidden" value="***"/>
+				    <input type="image" src="/images/resendcode-btn.png" alt="Submit button"/>
+                                <div style="color: green"> {{ notice }} </div>
+				</div>
+                        </form>
+                        <p>- or -</p>
+                        <p>Contact <a href="mailto:support@civiguard.com">support@civiguard.com</a></p>
+                    </div>
+                </div>
+
+                <div id="Footer">
+                    <p>Copyright &copy; 2010 CiviGuard, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

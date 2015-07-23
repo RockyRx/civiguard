@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>CiviGuard, Inc.</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection, print">
+<script>
+var deviceIphone = "iphone";
+var deviceIpod = "ipod";
+var deviceAndroid = "android";
+
+//Initialize our user agent string to lower case.
+var uagent = navigator.userAgent.toLowerCase();
+
+//**************************
+// Detects if the current device is an iPhone.
+function DetectIphone()
+{
+   if (uagent.search(deviceIphone) > -1)
+      return true;
+   else
+      return false;
+}
+
+//**************************
+// Detects if the current device is an iPod Touch.
+function DetectIpod()
+{
+   if (uagent.search(deviceIpod) > -1)
+      return true;
+   else
+      return false;
+}
+
+//**************************
+
+//**************************
+function DetectAndroid()
+{
+   if (uagent.search(deviceAndroid) > -1)
+      return true;
+   else
+      return false;
+}
+//**************************
+
+// Detects if the current device is an iPhone or iPod Touch.
+function DetectIphoneOrIpod()
+{
+    if (DetectIphone() || DetectIpod()) {
+	setTimeout("location.href = 'http://c.uxebu.com/civiguard';",1500);
+    }
+    else if (DetectAndroid()){
+       setTimeout("location.href = 'http://c.uxebu.com/civiguard';",1500);
+    }
+    else {
+       setTimeout("location.href = 'http://www.civiguard.com';",1500);
+    }
+}
+
+</script>
+</head>
+<body onLoad="DetectIphoneOrIpod();">
+<div id="Container">
+    <div id="Content">
+       <div id="Nav"><a href="http://www.civiguard.com">CiviGuard.com&nbsp;&raquo;</a></div>
+       <div id="Header">
+       		<a href="http://www.civiguard.me/"><img src="/images/logo.png" alt="CiviGuard Logo" /></a>
+       </div>
+       <div id="Wrap">
+
+
+<h1 class="center">Thanks</h1>
+        <div class="section-content">
+        <p>Thank you for registering for our beta!"</p><br/>
+	 <p>"You will now be redirected to our mobile beta or our homepage depending on your browser version."</p><br/>
+        <p>if you face any trouble please contact us through <a href="mailto:support@civiguard.com">support@civiguard.com</a></p>
+		</div>
+      <fieldset>
+      <div class="center">
+      </div>
+      </fieldset>
+
+       
+	   </div>
+    
+    <div id="Footer">
+    	<p>Copyright &copy; 2010 CiviGuard, Inc. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

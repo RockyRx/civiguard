@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>CiviGuard, Inc.</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection, print">
+<script src="/scripts/jquery-1.4.2.js"></script>
+<link rel="stylesheet" href="/css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+<script src="/scripts/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="/scripts/jquery.validationEngine.js" type="text/javascript"></script>
+</script>
+<script type="text/javascript">
+
+var emailfilter=/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i
+
+function checkmail(e){
+var returnval=emailfilter.test(e.value)
+if (returnval==false){
+document.getElementById("myLabel").innerHTML = "Please enter a valid email address."
+e.select()
+}
+return returnval
+}
+</script>
+</head>
+<body>
+<div id="Container">
+    <div id="Content">
+       <div id="Nav"><a href="http://www.civiguard.com">CiviGuard.com&nbsp;&raquo;</a></div>
+       <div id="Header"><a href="http://www.civiguard.me/"><img src="/images/logo.png" alt="CiviGuard Logo" /></a></div>
+       <div id="Wrap">
+<form name="civigform" id="civigform" action="/login_save/?qval=info/" method="POST">
+<div class="Section">
+<h1 class="center">Sign In</h1>
+        <fieldset>
+          <div>
+            <label for="">Email ID:</label> <input type="text" id="idEmail" name="emailAdd" class="width250" />
+    	  </div>
+          <div>
+            <label for="">Password:</label> <input type="password" id="" name="password" class="width250" />
+    	  </div>                                         
+        </fieldset>
+	 <center><a href="/resetpage/">Forgot password</a></center>
+	 <center><div for"" id="myLabel" style="color: red;"></div></center>
+	 <center><p style="color: red;">
+		{{ lgerror }}	
+	 </center></p>
+	 {% if form.errors %} 
+	  	<p style="color: red;">
+			{{ form.errors|pluralize }}
+		</p>
+	 {% endif %} 
+
+      <fieldset>
+      <div class="center">
+      <INPUT TYPE="image" SRC="/images/continue-btn.png" ALT="Submit" onClick="return checkmail(this.form.emailAdd)">
+      </div>
+      </fieldset>
+	</div>
+</form>
+	   </div>
+    
+    <div id="Footer">
+    	<p>Copyright &copy; 2010 CiviGuard, Inc. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>CiviGuard, Inc.</title>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection, print"/>
+        <script src="/scripts/jquery-1.4.2.js"></script>
+        <link rel="stylesheet" href="/css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <script src="/scripts/jquery.validationEngine-en.js" type="text/javascript"></script>
+        <script src="/scripts/jquery.validationEngine.js" type="text/javascript"></script>
+        <script  type="text/javascript">
+            $(document).ready(function() {
+                // SUCCESS AJAX CALL, replace "success: false," by:     success : function() { callSuccessFunction() },
+
+                $("#civigform").validationEngine()
+
+            });
+        </script>
+        <script  type="text/javascript">
+
+            function checkfields(){
+                frm=document.forms[0];
+                //check for text inputs
+                var bt;
+                if(frm.fullName.value=='' || frm.emailAdd.value=='' || frm.password.value=='' || frm.password2.value=='' || frm.cellPhone.value==''){
+                    bt = true;
+                }
+                //check for radio and check boxes
+                var br = true;
+                for (var i=0; i < frm.phoneType.length; i++){
+                    if (frm.phoneType[i].checked){
+                        br = false;
+                    }
+                }
+                var bc = true;
+                if(frm.terms1.checked && frm.terms2.checked){
+                    bc = false;
+                }
+                if(bt || br || bc){
+                    frm.signupBtn.disabled=true;
+                    document.getElementById('signupBtn').className='btsubmitds';
+                }else{
+                    frm.signupBtn.disabled=false;
+                    document.getElementById('signupBtn').className='btsubmites';
+                }
+            }
+                        
+        </script>
+    </head>
+
+    <!-- AJAX SUCCESS TEST FONCTION
+			<script>function callSuccessFunction(){alert("success executed")}
+					function callFailFunction(){alert("fail executed")}
+			</script>
+    -->
+
+    <body onload="document.civigform.fullName.focus()">
+
+        <div id="Container">
+            <div id="Content">
+                <div id="Nav"><a href="http://www.civiguard.com">CiviGuard.com&nbsp;&raquo;</a></div>
+                <div id="Header">
+                    <a href="http://www.civiguard.me/"><img src="/images/logo.png" alt="CiviGuard Logo" /></a>
+                </div>
+                <div id="Wrap">
+                    <form id="civigform" name="civigform" action="/check-form/" method="POST">
+
+                        <div class="Section">
+                            <h1 class="center">Sign Up</h1>
+                            <fieldset>
+                                <div>
+                                    <label for="">Name:</label> <input type="text" id="idfullName" name="fullName" class="width250 validate[required,custom[onlyLetter],length[0,100]] "  onchange="checkfields();"/>
+                                </div>
+                                <div>
+                                    <label for="">Email:</label> <input type="text" id="email" name="emailAdd" class="width250 validate[required,custom[email],length[0,100],ajax[ajaxUser]] "  onchange="checkfields();"/>
+
+                                </div>
+                                <div>
+                                    <label for="">Password:</label> <input name="password" type="password"  class="width250 validate[required,length[6,11]]" id="password"  onchange="checkfields();"/>
+                                </div>
+                                <div>
+                                    <label for="">Confirm Password:</label> <input name="password2" type="password"  id="idpassword2"  class="width250 validate[required,confirm[password]]"  onchange="checkfields();"/>
+                                </div>
+                                <div>
+
+                                    <label for="">Mobile Number:</label> <input id="idCellPhNb" name="cellPhone" type="text"  class="width250 validate[required,custom[telephone]]" id="" maxlength=20  onchange="checkfields();"/>
+                                </div>
+                                <div>
+                                    <label for="">Phone Type:</label>
+                                    <input type="radio" name="phoneType" value="iPhone" id="RadioGroup1_0" class="radio validate[required]"  onclick="checkfields();"/>iPhone
+                                    <input type="radio" name="phoneType" value="Android" id="RadioGroup1_1" class="radio validate[required]" onclick="checkfields();"/>Android
+                                    <input type="radio" name="phoneType" value="BlackBerry" id="RadioGroup1_2" class="radio validate[required]" onclick="checkfields();"/>BlackBerry
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="Section">
+                            <fieldset>
+                                <div>
+                                    <label for="">Terms of Service:</label><textarea rows="8" class="width300" readonly>CiviGuard, Inc does not provide liability insurance for the protection of individuals, groups, organizations, businesses, or others who may participate in the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications.
+
+In consideration for your use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS service, as well as any version of the CiviGuard downloadable application, the individual, group, organization, business, or other, does hereby release and forever discharge CiviGuard, Inc, and its officers, board, and employees, jointly and severally from any and all actions, causes of actions, claims and demands for, upon or by reason of any damage, loss or injury, which hereafter may be sustained through the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications.
+
+This release extends and applies to, and also covers and includes, all unknown, unforeseen, unanticipated and unsuspected injuries, damages, loss and liability and the consequences thereof, as well as those now disclosed and known to exist. The provisions of any state, federal, local or territorial law or state providing substance that releases shall not extend to claims, demands, injuries, or damages which are known or unsuspected to exist at this time, to the person executing such release, are hereby expressly waived.
+
+I hereby agree on behalf of my heirs, executors, administrators, and assigns, to indemnify CiviGuard, Inc and its officers, board and employees, joint and severally from any and all actions, causes of actions, claims and demands for, upon or by reason of any damage, loss or injury, which hereafter may be sustained by the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications.
+
+It is further understood and agreed that the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service,  including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications, is not to be construed as an admission of any liability and acceptance of assumption of responsibility by CiviGuard, Inc, its officers, board, and employees, jointly and severally, for all damages and expenses for which CiviGuard, Inc., its officers, board and employees, become liable as a result of any alleged act of the end user.
+
+IN ADDITION, BY USING THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE,  INCLUDING THE STANDARD SMS AND MOBILE DEVICE SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATIONS, YOU AGREE TO ASSUME ALL RISKS ASSOCIATED WITH YOUR USE OR TRANSFER OF ANY AND ALL INFORMATION CONTAINED THEREIN TO HOLD CiviGuard, Inc HARMLESS FROM ANY CLAIMS RELATING TO CONTENT OR INFORMATION.
+
+THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE, INCLUDING THE STANDARD SMS SERVICE AND MOBILE DEVICE SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATION, ITS CONTENTS, OR THE INFORMATION DERIVED THEREFROM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. CiviGuard, INC MAKES NO WARRANTIES ABOUT THE ACCURACY, RELIABILITY, COMPLETENESS, OR TIMELINESS OF THE MATERIAL, SERVICES, SOFTWARE, TEXT, GRAPHICS, AND LINKS. DESCRIPTION OF, OR REFERENCES TO, PRODUCTS OR PUBLICATIONS DOES NOT IMPLY ENDORSEMENT OF THAT PRODUCT OR PUBLICATION.
+
+CiviGuard, INC DOES NOT WARRANT THAT THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE, INCLUDING THE STANDARD SMS SERVICE AND MOBILE DEVICE SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATION, WILL OPERATE ERROR-FREE OR THAT THIS SITE AND ITS SERVER ARE FREE OF COMPUTER VIRUSES OR OTHER HARMFUL MECHANISMS. IF YOUR USE OR TRANSFER OF THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE, INCLUDING THE STANDARD SMS SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATION, OR THE INFORMATION CONTAINED THEREIN RESULTS IN THE NEED FOR SERVICING OR REPLACING EQUIPMENT OR DATA, CiviGuard, INC IS NOT RESPONSIBLE FOR THOSE COSTS.
+                                    </textarea>
+                                </div>
+                                <div>
+                                    <label for="">Consent:</label><input id="idterms1" name="terms1" type="checkbox" value="" class="checkbox validate[required]" onclick="checkfields();"/>I agree to the Terms of Service.
+                                </div>
+                                <div>
+                                    <label for="">&nbsp</label><input id="idterms2" name="terms2" type="checkbox" value=""  class="checkbox validate[required]" onclick="checkfields();"/>I consent to sharing the location of my connected device ONLY during 
+					 <label for="">&nbsp</label>emergencies.																					     
+                                </div>
+                            </fieldset>
+
+                        </div>
+                        <fieldset>
+                            <div class="center">
+                                <input type="submit" value="" class="btsubmitds" name="signupBtn" id="signupBtn" disabled/>
+                            </div>
+                        </fieldset>
+
+                    </form>
+                </div>
+                <div id="tt"></div>
+                <div id="Footer">
+
+                    <p>Copyright &copy; 2010 CiviGuard, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

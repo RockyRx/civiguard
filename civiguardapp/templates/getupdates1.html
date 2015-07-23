@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>CiviGuard, Inc.</title>
+        <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection, print"/>
+        <script src="/scripts//twitter.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/scripts/twitter.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            getTwitters('civiTweets', {
+                id: 'civiguard',
+                clearContents: true, // leave the original message in place
+                count: 3,
+                withFriends: true,
+                ignoreReplies: true,
+                newwindow: true
+            });
+        </script>
+        <script type="text/javascript">
+
+
+            function enableButton() {
+
+                frm=document.forms[0];
+                if((frm.termscbox.checked)&&(frm.sharecbox.checked)){                  
+                   
+                    frm.updatesBtn.disabled=false;
+                    document.getElementById('updatesBtn').className='btsubmite';
+                }
+                else {                    
+                   frm.updatesBtn.disabled=true;
+                   document.getElementById('updatesBtn').className='btsubmitd';
+                }
+            }
+        </script>
+    </head>
+    <body onload="document.epdatesForm.name.focus()">
+        <div id="Container">
+            <div id="Content">
+                <div id="Nav"><a href="http://www.civiguard.com">CiviGuard.com&nbsp;&raquo;</a></div>
+                <div id="Header">
+                    <a href="http://www.civiguard.me/"><img src="/images/logo.png" alt="CiviGuard Logo" /></a>
+                </div>
+                <div id="Wrap">
+                    <form name="epdatesForm" action="/updates/" method="POST">
+                        <div class="">
+                            <fieldset>
+                                <div>
+                                    <label for="">Name:</label> <input type="text" id="" name="name" class="width250" />
+                                </div>
+                                <div>
+                                    <label for="">Your IP address is:</label> {{ ip }} <input type="hidden" id="" name="ipAddress" class="width300" value="{{ ip }}" />
+
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="">
+                            <fieldset>
+                                <div>
+                                    <label for="">Terms of Service:</label><textarea rows="8" class="width300" readonly>CiviGuard, Inc does not provide liability insurance for the protection of individuals, groups, organizations, businesses, or others who may participate in the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications.
+
+In consideration for your use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS service, as well as any version of the CiviGuard downloadable application, the individual, group, organization, business, or other, does hereby release and forever discharge CiviGuard, Inc, and its officers, board, and employees, jointly and severally from any and all actions, causes of actions, claims and demands for, upon or by reason of any damage, loss or injury, which hereafter may be sustained through the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications.
+
+This release extends and applies to, and also covers and includes, all unknown, unforeseen, unanticipated and unsuspected injuries, damages, loss and liability and the consequences thereof, as well as those now disclosed and known to exist. The provisions of any state, federal, local or territorial law or state providing substance that releases shall not extend to claims, demands, injuries, or damages which are known or unsuspected to exist at this time, to the person executing such release, are hereby expressly waived.
+
+I hereby agree on behalf of my heirs, executors, administrators, and assigns, to indemnify CiviGuard, Inc and its officers, board and employees, joint and severally from any and all actions, causes of actions, claims and demands for, upon or by reason of any damage, loss or injury, which hereafter may be sustained by the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service, including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications.
+
+It is further understood and agreed that the use of the CiviGuard website, any product offered therein, or any version of the CiviGuard service,  including standard SMS and mobile device services, as well as any version of the CiviGuard downloadable applications, is not to be construed as an admission of any liability and acceptance of assumption of responsibility by CiviGuard, Inc, its officers, board, and employees, jointly and severally, for all damages and expenses for which CiviGuard, Inc., its officers, board and employees, become liable as a result of any alleged act of the end user.
+
+IN ADDITION, BY USING THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE,  INCLUDING THE STANDARD SMS AND MOBILE DEVICE SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATIONS, YOU AGREE TO ASSUME ALL RISKS ASSOCIATED WITH YOUR USE OR TRANSFER OF ANY AND ALL INFORMATION CONTAINED THEREIN TO HOLD CiviGuard, Inc HARMLESS FROM ANY CLAIMS RELATING TO CONTENT OR INFORMATION.
+
+THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE, INCLUDING THE STANDARD SMS SERVICE AND MOBILE DEVICE SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATION, ITS CONTENTS, OR THE INFORMATION DERIVED THEREFROM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. CiviGuard, INC MAKES NO WARRANTIES ABOUT THE ACCURACY, RELIABILITY, COMPLETENESS, OR TIMELINESS OF THE MATERIAL, SERVICES, SOFTWARE, TEXT, GRAPHICS, AND LINKS. DESCRIPTION OF, OR REFERENCES TO, PRODUCTS OR PUBLICATIONS DOES NOT IMPLY ENDORSEMENT OF THAT PRODUCT OR PUBLICATION.
+
+CiviGuard, INC DOES NOT WARRANT THAT THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE, INCLUDING THE STANDARD SMS SERVICE AND MOBILE DEVICE SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATION, WILL OPERATE ERROR-FREE OR THAT THIS SITE AND ITS SERVER ARE FREE OF COMPUTER VIRUSES OR OTHER HARMFUL MECHANISMS. IF YOUR USE OR TRANSFER OF THE CiviGuard WEBSITE OR ANY VERSION OF THE CiviGuard SERVICE, INCLUDING THE STANDARD SMS SERVICE, AS WELL AS ANY VERSION OF THE CiviGuard DOWNLOADABLE APPLICATION, OR THE INFORMATION CONTAINED THEREIN RESULTS IN THE NEED FOR SERVICING OR REPLACING EQUIPMENT OR DATA, CiviGuard, INC IS NOT RESPONSIBLE FOR THOSE COSTS.
+</textarea>
+                                </div>
+                                <div>
+                                    <label for="">Consent:</label><input name="" type="checkbox" value="" class="checkbox" id="termscbox" onclick="enableButton();"/>I agree to the Terms of Service.
+                                </div>
+                                <div>
+                                    <label for="">&nbsp;</label><input name="" type="checkbox" value=""  class="checkbox" id="sharecbox" onclick="enableButton();"/>I consent to sharing the location of my connected device ONLY during
+			           	 <label for="">&nbsp</label>emergencies.
+				    </div>
+                            </fieldset>
+                            <fieldset>
+                                <div>
+					 <center><div style="color: red">{{ error }}</div></center>
+                                    <label for="">&nbsp;</label><input type="submit" value="" class="btsubmitd" name="updatesBtn" id="updatesBtn" disabled/>
+				  </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="Footer">
+                    <p>Copyright &copy; 2010 CiviGuard, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

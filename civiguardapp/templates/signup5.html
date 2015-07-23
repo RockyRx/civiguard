@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>CiviGuard, Inc.</title>
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection, print">
+</head>
+<body>
+<form name="civigform" id="civigform" action="/verification/" method="POST">
+<div id="Container">
+    <div id="Content">
+       <div id="Nav"><a href="http://www.civiguard.com">CiviGuard.com&nbsp;&raquo;</a></div>
+       <div id="Header">
+       		<a href="http://www.civiguard.me/"><img src="/images/logo.png" alt="CiviGuard Logo" /></a>
+       </div>
+       <div id="Wrap">
+
+
+<h1 class="center">Verification</h1>
+        <div class="section-content">
+	 <p><strong>{{ activated }}</strong></p>	
+        <p>Your mobile number is <strong>{{ npnumber }}</strong>. </p>
+        <p>A security code will be sent by text message to the number above. <br />
+          You must enter this code on the following screen to access your account. </p>
+        <p>Please click Send Code to get a code.</p>
+        <div style="color: red"> {{ error }} </div>
+	 <input type="hidden" id="" name="userEmail" class="width250" value="{{ userEmail }}" />
+	 <input name="reval" type="hidden" value="{{ code }}"/>
+	 <input name="val" type="hidden" value="aaa"/>
+       	</div>
+      <fieldset>
+      <div class="center">
+      <INPUT TYPE="image" SRC="/images/sendcode-btn.png" ALT="Submit" />
+      </div>
+      </fieldset>
+</form>
+       
+	   </div>
+    
+    <div id="Footer">
+    	<p>Copyright &copy; 2010 CiviGuard, Inc. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

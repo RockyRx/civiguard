@@ -1,0 +1,306 @@
+
+BODY {
+    background: #FFF;
+    margin: 0;
+    text-align: center;
+    font:100%  Geneva, sans-serif;
+    color:#333;
+
+}
+
+img {
+    border:none;
+}
+
+a, a:active, a:visited {
+    color:#333399;
+    text-decoration:none;
+}
+
+a:hover {
+    color:#cc0000;
+    text-decoration:none;
+}
+
+
+#Container {
+    width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    background: #FFFFFF;
+}
+
+#Nav {
+    width:400px;
+    margin: 0 auto;
+    float:right;
+    text-align:right;
+    padding-top:10px;
+}
+
+#Header {
+    clear:both;
+    width:800px;
+    margin: 0 auto;
+    padding:0;
+    text-align: center;
+}
+
+#Header h1 {
+    margin:0;
+    padding:0;
+}
+
+#Wrap {
+    width:800px;
+    margin:0 auto;
+    padding:0;
+}
+
+#Wrap h1 {
+    margin-top:5px;
+    margin-bottom:40px;
+}
+
+#ColLeft {
+    float:left;
+    width:400px;
+    margin: 0 auto;
+    padding:0;
+    text-align: left;
+}
+
+#ColRight {
+    float:right;
+    width:400px;
+    margin:0 auto;
+    padding:0;
+    text-align: right;
+}
+
+
+#ColLeft2 {
+    float:left;
+    width:399px;
+    margin: 0 auto;
+    padding:0;
+    text-align: center;
+    border-right:1px solid #ddd;
+}
+
+#ColRight2 {
+    float:right;
+    width:400px;
+    margin:0 auto;
+    padding:0;
+    text-align: center;
+}
+
+#ColRight2 p {
+    margin:0;
+    padding:0.4em;
+}
+
+
+.CodeForm {
+
+    width:399px;
+    margin:0 auto;
+    padding:0;
+    margin-bottom:20px;
+}
+
+#Twitter {
+    clear:both;
+    width:780px;
+    margin:20px 0 0 0;
+    padding:30px 0 0 0;
+
+}
+
+#Twitter h3 {
+    margin:0;
+    text-align:center;
+    padding-top:20px;
+}
+
+
+.twitters {
+    float:left;
+    padding: 0;
+    overflow: auto;
+    margin: 0;
+}
+
+.twitters ul {
+    list-style: none;
+    padding: 0;
+}
+
+.twitters ul li {
+    padding: 10px;
+}
+.twitters span.prefix {
+    font-weight: normal;
+}
+
+.twitters span.time {
+    font-style: italic;
+    color: #c5c5c5;
+}
+.twitters span.status {
+    font-style: italic;
+}	
+
+#Footer {
+    clear:both;
+    text-align:center;
+    margin:0;
+}
+
+#Footer p {
+    padding:20px 0 20px 0;
+    margin:0;
+    font-size:90%;
+}
+
+
+
+form {
+    width:800px;
+    background:#fff;
+    margin: 0 auto;
+    padding:0;
+}
+label {
+    float:left;
+    width:31%;
+    text-align:right;
+    margin-right:0.8em;
+}
+
+fieldset {
+    border:none;
+    padding:0;
+    float:left;
+    width:800px;
+}
+fieldset div {
+    margin:0.8em 0;
+    width:auto;
+    clear:both;
+}
+
+fieldset div p {
+    font: 90%/1.3 Geneva, sans-serif;
+    padding: 0.4em 0 0 0;
+}
+
+input, textarea {
+    background:#fafafa;
+    padding:0.2em;
+}
+
+select {
+    background:#fafafa;
+    font:110% bold Geneva, sans-serif;
+}
+
+input {font:110% bold Geneva, sans-serif;}
+
+
+.checkbox {
+    background-color:#fff;
+    padding:0;
+    margin-right:0.4em;
+}
+
+.radio {
+    background-color:#fff;
+    padding:0;
+}
+
+.width300 {
+    width:300px;
+}
+
+.width250{
+    width:250px;
+}
+
+.center {
+    text-align:center;
+
+}
+.section-content {
+    width:600px;
+    margin:auto;
+    text-align:center;
+}
+
+#social-connect {
+    margin:20px 0 0 0;
+}
+#social-bypass {
+    margin:10px 0 25px 0;
+}
+.width40 {
+    width:40px;
+}
+
+
+#errorCodeDiv{
+    margin: 2px 0 1px 0;
+    text-align: center;
+    color: red;
+    padding: 0 0 5px 0;
+    font-weight:bold;
+}
+
+#resendCodeDiv{
+    margin: 2px 0 1px 0;
+    text-align: center;
+    color: green;   
+    font-size: inherit;
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #99ff99;
+}
+
+#loginErrorDiv{
+    margin: 0 0 5px 0;
+    text-align: center;
+    color: red;
+    font-size: inherit;
+    font-family: Arial,Helvetica,sans-serif;
+
+}
+
+#updatesBtn{   
+    border:0 none;
+    cursor:pointer;
+    width: 275px;
+    height:80px;
+}
+
+.btsubmite{
+     background:url("/images/getupdates-btn.png") no-repeat scroll left top transparent;
+}
+
+.btsubmitd{
+     background:url("/images/getupdates-btn-d.png") no-repeat scroll left top transparent;
+}
+
+#signupBtn{
+    border:0 none;
+    cursor:pointer;
+    width: 275px;
+    height:80px;
+}
+
+.btsubmites{
+     background:url("/images/submit-btn.png") no-repeat scroll left top transparent;
+}
+
+.btsubmitds{
+     background:url("/images/submit-btn-d.png") no-repeat scroll left top transparent;
+}
