@@ -15,8 +15,8 @@ RECAPTCHA_PUB_KEY = "6Ldfk7oSAAAAAEjQwFgRS8NRxSoeSsz3ELZxUsuK"
 RECAPTCHA_PRIVATE_KEY = "6Ldfk7oSAAAAAFNoWkw011p8NLTZuhy02P2WCmKp"
 
 API_VERSION = '2008-08-01'
-ACCOUNT_SID = 'ACb1ba48597e2912b36a0cda0288ffd5fe'
-ACCOUNT_TOKEN = '0364bc69312a47badd3e1628a0100f04'
+ACCOUNT_SID = '#'
+ACCOUNT_TOKEN = '#'
 
 DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'civiguard'             # Or path to database file if using sqlite3.
